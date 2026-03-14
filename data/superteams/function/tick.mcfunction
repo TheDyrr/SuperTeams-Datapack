@@ -11,5 +11,9 @@ execute as @a[scores={st_team=1..,st_deaths=1..}] run function superteams:power_
 # Power system - apply buffs when power changes
 execute as @a[scores={st_team=1..}] run function superteams:power_check
 
-# Recharge - detect offhand chip to refresh 15 min buff
-execute as @a[scores={st_team=1..}] run function superteams:recharge
+# Cooldown timer - tick down
+execute as @a[scores={st_cooldown=1..}] run scoreboard players remove @s st_cooldown 1
+execute as @a[scores={st_cooldown=1}] run title @s actionbar {"text":"Recharge ready!","color":"green"}
+
+# Recharge - detect offhand chip to refresh 15 min buff (only if not on cooldown)
+execute as @a[scores={st_team=1..,st_cooldown=0}] run function superteams:recharge

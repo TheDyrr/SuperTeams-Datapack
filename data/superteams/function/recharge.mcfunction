@@ -10,7 +10,8 @@ execute if entity @s[scores={st_team=5}] if items entity @s weapon.offhand minec
 
 # If st_offhand changed from 0 to 2, chip was just placed - recharge
 execute if entity @s[scores={st_offhand=2}] run function superteams:power_apply
-execute if entity @s[scores={st_offhand=2}] run title @s actionbar {"text":"Buff recharged! 15 minutes","color":"green"}
+execute if entity @s[scores={st_offhand=2}] run title @s actionbar {"text":"Buff recharged! 15 minutes (10 min cooldown)","color":"green"}
+execute if entity @s[scores={st_offhand=2}] run scoreboard players set @s st_cooldown 12000
 execute if entity @s[scores={st_offhand=2}] run scoreboard players set @s st_offhand 1
 
 # If chip is no longer in offhand, reset to 0
