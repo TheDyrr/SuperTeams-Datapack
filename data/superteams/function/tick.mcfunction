@@ -10,3 +10,6 @@ execute as @a[scores={st_team=1..,st_deaths=1..}] run function superteams:power_
 
 # Power system - apply buffs when power changes
 execute as @a[scores={st_team=1..}] run function superteams:power_check
+
+# Recharge - detect offhand chip to refresh 15 min buff
+execute as @a[scores={st_team=1..}] run function superteams:recharge

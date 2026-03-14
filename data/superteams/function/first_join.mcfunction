@@ -4,6 +4,7 @@ scoreboard players set @s st_power 0
 scoreboard players set @s st_power_last -1
 scoreboard players set @s st_kills 0
 scoreboard players set @s st_deaths 0
+scoreboard players set @s st_offhand 0
 
 give @s minecraft:echo_shard[minecraft:custom_name='{"text":"Doritos Buff","italic":false}']
 give @s minecraft:phantom_membrane[minecraft:custom_name='{"text":"Cheetos Buff","italic":false}']
