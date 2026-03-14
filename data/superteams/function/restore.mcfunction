@@ -6,4 +6,6 @@ clear @s minecraft:heart_of_the_sea
 clear @s minecraft:nautilus_shell
 clear @s minecraft:prismarine_crystals
 scoreboard players set @s st_power_last -1
+scoreboard players set @s st_cooldown 0
+scoreboard players set @s st_buff_timer -1
 function superteams:first_join
