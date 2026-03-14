@@ -30,6 +30,15 @@ A Minecraft datapack for team-based arena gameplay. Players choose one of 5 snac
 For custom triangle team icons on the selection items, also install the companion resource pack:
 [SuperTeams-Icons](https://github.com/TheDyrr/SuperTeams-Icons)
 
+The resource pack is included as a git submodule in `SuperTeams-Icons/`. To fetch it when cloning:
+```bash
+git clone --recurse-submodules https://github.com/TheDyrr/SuperTeams-Datapack.git
+```
+Or if already cloned:
+```bash
+git submodule update --init
+```
+
 ## Pack Format
 
 - `pack_format: 61` (Minecraft 1.21.4+)
