@@ -11,6 +11,12 @@ execute as @a[scores={st_team=1..,st_deaths=1..}] run function superteams:power_
 # Power system - apply buffs when power changes
 execute as @a[scores={st_team=1..}] run function superteams:power_check
 
+# Buff timer - tick down and expire
+execute as @a[scores={st_buff_timer=1..}] run scoreboard players remove @s st_buff_timer 1
+execute as @a[scores={st_buff_timer=0}] run effect clear @s
+execute as @a[scores={st_buff_timer=0}] run title @s actionbar {"text":"Buff expired!","color":"red"}
+execute as @a[scores={st_buff_timer=0}] run scoreboard players set @s st_buff_timer -1
+
 # Cooldown timer - tick down
 execute as @a[scores={st_cooldown=1..}] run scoreboard players remove @s st_cooldown 1
 execute as @a[scores={st_cooldown=1}] run title @s actionbar {"text":"Recharge ready!","color":"green"}

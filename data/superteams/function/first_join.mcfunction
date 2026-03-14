@@ -5,6 +5,7 @@ scoreboard players set @s st_power_last -1
 scoreboard players set @s st_kills 0
 scoreboard players set @s st_deaths 0
 scoreboard players set @s st_offhand 0
+scoreboard players set @s st_buff_timer -1
 
 give @s minecraft:echo_shard[minecraft:item_name='"Doritos Buff"']
 give @s minecraft:phantom_membrane[minecraft:item_name='"Cheetos Buff"']

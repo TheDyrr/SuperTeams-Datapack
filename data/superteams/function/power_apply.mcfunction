@@ -8,30 +8,31 @@ scoreboard players operation @s st_power_last = @s st_power
 # Power 1-4 = level 1
 # Power 5 = level 2
 # Duration: 900 seconds (15 minutes)
+# Only apply effects if buff timer is active (st_buff_timer > 0)
 
 # Doritos (team 1) - Strength
-execute if entity @s[scores={st_team=1,st_power=1..4}] run effect give @s strength 900 0 true
-execute if entity @s[scores={st_team=1,st_power=5}] run effect give @s strength 900 1 true
+execute if entity @s[scores={st_team=1,st_power=1..4,st_buff_timer=1..}] run effect give @s strength 900 0 true
+execute if entity @s[scores={st_team=1,st_power=5,st_buff_timer=1..}] run effect give @s strength 900 1 true
 
 # Cheetos (team 2) - Speed
-execute if entity @s[scores={st_team=2,st_power=1..4}] run effect give @s speed 900 0 true
-execute if entity @s[scores={st_team=2,st_power=5}] run effect give @s speed 900 1 true
+execute if entity @s[scores={st_team=2,st_power=1..4,st_buff_timer=1..}] run effect give @s speed 900 0 true
+execute if entity @s[scores={st_team=2,st_power=5,st_buff_timer=1..}] run effect give @s speed 900 1 true
 
 # Lays (team 3) - Resistance
-execute if entity @s[scores={st_team=3,st_power=1..4}] run effect give @s resistance 900 0 true
-execute if entity @s[scores={st_team=3,st_power=5}] run effect give @s resistance 900 1 true
+execute if entity @s[scores={st_team=3,st_power=1..4,st_buff_timer=1..}] run effect give @s resistance 900 0 true
+execute if entity @s[scores={st_team=3,st_power=5,st_buff_timer=1..}] run effect give @s resistance 900 1 true
 
 # Takis (team 4) - Fire Resistance (+ Health Boost at power 5)
-execute if entity @s[scores={st_team=4,st_power=1..4}] run effect give @s fire_resistance 900 0 true
-execute if entity @s[scores={st_team=4,st_power=5}] run effect give @s fire_resistance 900 0 true
-execute if entity @s[scores={st_team=4,st_power=5}] run effect give @s health_boost 900 1 true
+execute if entity @s[scores={st_team=4,st_power=1..4,st_buff_timer=1..}] run effect give @s fire_resistance 900 0 true
+execute if entity @s[scores={st_team=4,st_power=5,st_buff_timer=1..}] run effect give @s fire_resistance 900 0 true
+execute if entity @s[scores={st_team=4,st_power=5,st_buff_timer=1..}] run effect give @s health_boost 900 1 true
 
 # Pringles (team 5) - Haste
-execute if entity @s[scores={st_team=5,st_power=1..4}] run effect give @s haste 900 0 true
-execute if entity @s[scores={st_team=5,st_power=5}] run effect give @s haste 900 1 true
+execute if entity @s[scores={st_team=5,st_power=1..4,st_buff_timer=1..}] run effect give @s haste 900 0 true
+execute if entity @s[scores={st_team=5,st_power=5,st_buff_timer=1..}] run effect give @s haste 900 1 true
 
 # Power 0 message
 execute if entity @s[scores={st_power=0}] run title @s actionbar {"text":"Power lost! Get a kill to regain your buff!","color":"red"}
 
 # Power 5 message
-execute if entity @s[scores={st_power=5}] run title @s actionbar {"text":"MAX POWER! Buff upgraded!","color":"gold"}
+execute if entity @s[scores={st_power=5,st_buff_timer=1..}] run title @s actionbar {"text":"MAX POWER! Buff upgraded!","color":"gold"}

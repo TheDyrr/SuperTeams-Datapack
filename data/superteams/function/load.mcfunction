@@ -7,6 +7,7 @@ scoreboard objectives add st_deaths deathCount
 scoreboard objectives add st_power_last dummy
 scoreboard objectives add st_offhand dummy
 scoreboard objectives add st_cooldown dummy
+scoreboard objectives add st_buff_timer dummy
 
 team add doritos
 team add cheetos
